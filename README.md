@@ -7,7 +7,7 @@ Simply Request to Instgram Authentication API and get Access Token
       compile 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
  ```
  - Need Internet Permission:
- ```xml
+ ```XML
     <uses-permission android:name="android.permission.INTERNET"/>
  ```
  
