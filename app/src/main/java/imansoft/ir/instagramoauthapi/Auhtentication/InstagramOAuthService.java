@@ -33,7 +33,7 @@ import imansoft.ir.instagramoauthapi.R;
 /**
  * Created by ImanX on 5/20/2016.
  */
-public class Authentication {
+public class InstagramOAuthService {
 
     private Context                 context;
     private String                  contentDialog;
@@ -55,6 +55,8 @@ public class Authentication {
         void onSuccessAuthenticate(String accessToken);
 
         void onFailureAuthenticate();
+
+
     }
 
     public interface DialogAuthenticationListener {
@@ -70,18 +72,18 @@ public class Authentication {
     }
 
 
-    public Authentication(Context context) {
+    public InstagramOAuthService(Context context) {
         this.context = context;
     }
 
-    public Authentication setClientInfoParameters(HashMap<String, String> clientInfoParameters) {
+    public InstagramOAuthService setClientInfoParameters(HashMap<String, String> clientInfoParameters) {
         this.clientId = clientInfoParameters.get(CLIENT_ID);
         this.redirectUri = clientInfoParameters.get(REDIRECT_URI);
         this.clientInfoParameters = clientInfoParameters;
         return this;
     }
 
-    public Authentication setContentAuthDialog(String contentDialog) {
+    public InstagramOAuthService setContentAuthDialog(String contentDialog) {
         this.contentDialog = contentDialog;
         return this;
     }
@@ -93,7 +95,7 @@ public class Authentication {
                 .setDialogAuthenticationListener(new DialogAuthenticationListener() {
                     @Override
                     public void onAuthorizationCode(String authorizeCode) {
-                        Authentication.this.clientInfoParameters.put(CODE, authorizeCode);
+                        InstagramOAuthService.this.clientInfoParameters.put(CODE, authorizeCode);
                         requestAccessToken();
                     }
                 }).show();

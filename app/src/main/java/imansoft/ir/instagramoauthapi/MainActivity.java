@@ -6,7 +6,7 @@ import android.util.Log;
 
 import java.util.HashMap;
 
-import imansoft.ir.instagramoauthapi.Auhtentication.Authentication;
+import imansoft.ir.instagramoauthapi.Auhtentication.InstagramOAuthService;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
         clientInfoParams.put("grant_type", "authorization_code");
         clientInfoParams.put("redirect_uri", "imanx://content");
 
-        new Authentication(this)
+        new InstagramOAuthService(this)
                 .setClientInfoParameters(clientInfoParams)
-                .authorize(new Authentication.OAuthCallBack() {
+                .authorize(new InstagramOAuthService.OAuthCallBack() {
                     @Override
                     public void onSuccessAuthenticate(String accessToken) {
                         Log.i("TAG Token", accessToken);
