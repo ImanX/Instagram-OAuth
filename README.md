@@ -16,8 +16,8 @@ Simply Request to Instgram Authentication API and get Access Token
  ```Java
 
         HashMap<String, String> clientInfoParams = new HashMap<>();
-        clientInfoParams.put("client_id", "47178b7af1f2439ca80e58fda6e1d25c");
-        clientInfoParams.put("client_secret", "dcdc4e56d7d54035bae988eea17ac61d");
+        clientInfoParams.put("client_id", "47178b7afxxxxxxxxxxxxxxxxxxxxxxxx");
+        clientInfoParams.put("client_secret", "dcdc4e56d7xxxxxxxxxxxxxxxxxxx");
         clientInfoParams.put("grant_type", "authorization_code");
         clientInfoParams.put("redirect_uri", "imanx://content");
 
