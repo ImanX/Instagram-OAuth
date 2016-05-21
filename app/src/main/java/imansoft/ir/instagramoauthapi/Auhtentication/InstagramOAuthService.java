@@ -261,7 +261,6 @@ public class InstagramOAuthService {
 
         public void execute(HttpRequestListener listener) {
             this.listener = listener;
-            log();
             Request request = new StringRequest(requestMethod, url, this, this) {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
@@ -271,12 +270,5 @@ public class InstagramOAuthService {
             Volley.newRequestQueue(context).add(request);
         }
 
-
-        private void log() {
-            Log.i("TAG size", clientInfoParameters.size() + "");
-            for (Map.Entry<String, String> item : clientInfoParameters.entrySet()) {
-                Log.i("TAG params", item.getKey() + ":" + item.getValue());
-            }
-        }
     }
 }
