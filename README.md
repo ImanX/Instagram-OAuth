@@ -13,17 +13,10 @@ Simply Request to Instgram Authentication API and get Access Token
 ```
  
 - Example :
- ```xml
-
-  HashMap<String, String> clientInfoParams = new HashMap<>();
-        clientInfoParams.put("client_id", "471xxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        clientInfoParams.put("client_secret", "dcdxxxxxxxxxxxxxxxxxxxxxx");
-        clientInfoParams.put("grant_type", "authorization_code");
-        clientInfoParams.put("redirect_uri", "redirect://content");
-
-        new Authentication(this)
+ ```Java
+    new InstagramOAuthService(this)
                 .setClientInfoParameters(clientInfoParams)
-                .authorize(new Authentication.OAuthCallBack() {
+                .authorize(new InstagramOAuthService.OAuthCallBack() {
                     @Override
                     public void onSuccessAuthenticate(String accessToken) {
                         Log.i("TAG Token", accessToken);
