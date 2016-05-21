@@ -31,17 +31,21 @@ import imansoft.ir.instagramoauthapi.R;
 
 
 /**
- * Created by ImanX on 5/20/2016.
+ * Created by Alireza Tarazani ImanX
+ * Copyright 2016 Alireza Tarazani ImanX. All rights reserved.
+ * <P>
+ *     Instagram Authentication API Service Handler
+ * </P>
  */
 public class InstagramOAuthService {
 
     private Context                 context;
     private String                  contentDialog;
+    private String                  clientId;
+    private String                  redirectUri;
     private HashMap<String, String> clientInfoParameters;
     private OAuthCallBack           listener;
 
-    private String clientId;
-    private String redirectUri;
 
     private static final String AUTHENTICATION_URL = "https://api.instagram.com/oauth/authorize/?";
     private static final String ACCESS_TOKEN_URL   = "https://api.instagram.com/oauth/access_token";
